@@ -1,4 +1,4 @@
-package bai_1_Introduction_to_Java.thuc_hanh.kiem_tra_nam_nhuan;
+package bai_1_introduction_to_java.thuc_hanh.kiem_tra_nam_nhuan;
 import java.util.Scanner;
 public class CheckLeapYear {
     public static void main(String[] args) {

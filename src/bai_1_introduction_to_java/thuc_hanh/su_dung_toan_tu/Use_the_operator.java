@@ -1,4 +1,4 @@
-package bai_1_Introduction_to_Java.thuc_hanh.su_dung_toan_tu;
+package bai_1_introduction_to_java.thuc_hanh.su_dung_toan_tu;
 
 import java.util.Scanner;
 public class Use_the_operator {

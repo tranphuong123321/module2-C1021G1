@@ -1,4 +1,4 @@
-package bai_1_Introduction_to_Java.thuc_hanh.hien_thi_thoi_gian;
+package bai_1_introduction_to_java.thuc_hanh.hien_thi_thoi_gian;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package bai_1_Introduction_to_Java.thuc_hanh.tinh_can_nang;
+package bai_1_introduction_to_java.thuc_hanh.tinh_can_nang;
 
 import java.util.Scanner;
 

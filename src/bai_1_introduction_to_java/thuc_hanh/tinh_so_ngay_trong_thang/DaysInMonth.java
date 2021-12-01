@@ -1,4 +1,4 @@
-package bai_1_Introduction_to_Java.thuc_hanh.tinh_so_ngay_trong_thang;
+package bai_1_introduction_to_java.thuc_hanh.tinh_so_ngay_trong_thang;
  import java.util.Scanner;
 public class DaysInMonth {
     public static void main(String[] args) {
