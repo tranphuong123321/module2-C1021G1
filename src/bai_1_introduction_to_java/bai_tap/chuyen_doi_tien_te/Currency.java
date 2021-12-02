@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Currency {
     public static void main(String[] args) {
-        Scanner input =new Scanner(System.in);
         System.out.print("nhap USD: ");
-        int USD=input.nextInt();
-        int VND= USD*23000;
-        System.out.println(USD+"USD"+"="+VND+"VND");
+        int usd = new Scanner(System.in).nextInt();
+        int vnd = usd * 23000;
+        System.out.println(usd + "USD" + "=" + vnd + "VND");
     }
 }
