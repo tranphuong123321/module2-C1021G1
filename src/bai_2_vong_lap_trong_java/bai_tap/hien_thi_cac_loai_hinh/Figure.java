@@ -19,14 +19,50 @@ public class Figure {
                     }
                     System.out.println("");
                 }
-                ;
+                break;
             case 2:
+                System.out.println("botton-left");
                 for (int i = 1; i <= 5; i++) {
-                    for (int j = 1; j <i; j++) {
-                        System.out.println("*");
+                    for (int j = 1; j <= i; j++) {
+                        System.out.print("*");
                     }
                     System.out.println("");
                 }
+                System.out.println("top-left");
+                for (int i = 1; i <= 5; i++) {
+                    for (int j = 5; j >= i; j--) {
+                        System.out.print("*");
+                    }
+                    System.out.println("");
+                }
+                System.out.println("top-right");
+                for (int i = 1; i <= 5; i++) {
+                    for (int j = 5; j >= 1; j--) {
+                        if (j <= (5 - i)) {
+                            System.out.print("*");
+                        } else {
+                            System.out.print(" ");
+                        }
+                        System.out.println();
+                    }
+                }
+                break;
+            case 3:
+                for (int i=1;i<=5;i++){
+                    for (int j=0;j<=5-i;j++){
+                        System.out.print(" ");
+                    }
+                    for (int k=0;k<i*2-1;k++){
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+                break;
+            case 0:
+                System.exit(0);
+            default:
+                System.out.println("No choice");
+
         }
     }
 }
