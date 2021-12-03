@@ -6,7 +6,7 @@ public class Prime {
         int num = 3;
         System.out.println("Nhập vào n số nguyên tố đầu tiên:");
         int n = new Scanner(System.in).nextInt();
-        if (n >= 1) {
+        if (n == 1) {
             System.out.println(n+" Số nguyên tố đầu tiên là:");
             System.out.println(2);
         }
