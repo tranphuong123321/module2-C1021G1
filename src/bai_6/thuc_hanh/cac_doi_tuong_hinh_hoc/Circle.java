@@ -1,7 +1,7 @@
 package bai_6.thuc_hanh.cac_doi_tuong_hinh_hoc;
 
 public class Circle extends Shape {
-    private double radius = 1.0;
+    private double radius =1;
 
     public Circle() {
     }
