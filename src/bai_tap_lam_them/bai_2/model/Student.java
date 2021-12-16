@@ -20,6 +20,9 @@ public class Student {
     public Student() {
     }
 
+    public Student(String trường, int i, String hn) {
+    }
+
     public String getId() {
         return id;
     }
