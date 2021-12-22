@@ -1,8 +1,8 @@
-package case_study.service.impl;
+package case_study.service.Impl;
 
-import case_study.service.CustomerService;
+import case_study.service.EmployeeService;
 
-public class CustomerServiceImpl implements CustomerService {
+public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void display() {
 
