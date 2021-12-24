@@ -7,7 +7,7 @@ public interface Service {
 
     public void edit();
 
-    public void delete();
+
 
 
 }

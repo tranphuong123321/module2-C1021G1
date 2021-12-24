@@ -14,6 +14,7 @@ public class FuramaController {
     public static void displayMainMenu() {
 
         boolean check = true;
+        int choice = 0;
         while (check) {
             System.out.println("1. Employee Management");
             System.out.println("2. Customer Management");
@@ -23,7 +24,12 @@ public class FuramaController {
             System.out.println("6. Exit");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
+            switch (choice) {
                 case 1:
                     displayEmployeeManagement();
                     break;
@@ -57,6 +63,7 @@ public class FuramaController {
     public static void displayEmployeeManagement() {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         boolean check = true;
+        int choice=0;
         while (check) {
             System.out.println("1. Display list employees");
             System.out.println("2. Add new employee");
@@ -65,15 +72,20 @@ public class FuramaController {
 
 
             Scanner scanner = new Scanner(System.in);
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
             switch (scanner.nextInt()) {
                 case 1:
                     employeeService.display();
-                break;
+                    break;
                 case 2:
                     employeeService.addNew();
                     break;
                 case 3:
-
+                    employeeService.edit();
                     break;
                 case 4:
                     displayMainMenu();
@@ -85,6 +97,7 @@ public class FuramaController {
     public static void displayCustomerManagement() {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         boolean check = true;
+        int choice=0;
         while (check) {
             System.out.println("1. Display list customers");
             System.out.println("2. Add new customers");
@@ -93,6 +106,11 @@ public class FuramaController {
 
 
             Scanner scanner = new Scanner(System.in);
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
             switch (scanner.nextInt()) {
                 case 1:
                     customerService.display();
@@ -101,7 +119,7 @@ public class FuramaController {
                     customerService.addNew();
                     break;
                 case 3:
-
+                    customerService.edit();
                     break;
                 case 4:
                     displayMainMenu();
@@ -112,6 +130,7 @@ public class FuramaController {
 
     public static void displayFacilityManagement() {
         boolean check = true;
+        int choice=0;
         while (check) {
             System.out.println("1. Display list facility");
             System.out.println("2. Add new facility");
@@ -120,6 +139,11 @@ public class FuramaController {
 
 
             Scanner scanner = new Scanner(System.in);
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
             switch (scanner.nextInt()) {
                 case 1: {
                 }
@@ -129,6 +153,7 @@ public class FuramaController {
 
     public static void displayBookingManagement() {
         boolean check = true;
+        int choice=0;
         while (check) {
             System.out.println("1. Add new booking");
             System.out.println("2. Display list booking");
@@ -139,6 +164,11 @@ public class FuramaController {
 
 
             Scanner scanner = new Scanner(System.in);
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
             switch (scanner.nextInt()) {
                 case 1: {
                 }
@@ -148,12 +178,18 @@ public class FuramaController {
 
     public static void displayPromotionManagement() {
         boolean check = true;
+        int choice =0;
         while (check) {
             System.out.println("1. Display list customers use service");
             System.out.println("2. Display list customers get voucher");
             System.out.println("3. Return main menu");
 
             Scanner scanner = new Scanner(System.in);
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
             switch (scanner.nextInt()) {
                 case 1: {
                 }

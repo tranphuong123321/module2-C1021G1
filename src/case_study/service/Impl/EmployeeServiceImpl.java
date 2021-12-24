@@ -1,6 +1,8 @@
 package case_study.service.Impl;
 
+import case_study.models.Customer;
 import case_study.models.Employee;
+import case_study.models.Person;
 import case_study.service.EmployeeService;
 
 import java.util.ArrayList;
@@ -8,11 +10,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
-    static List<Employee> employeeList= new ArrayList<>();
+    static List<Employee> employeeList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
+
     @Override
     public void display() {
-        for (Employee employee : employeeList){
+        for (Employee employee : employeeList) {
             System.out.println(employee);
         }
     }
@@ -20,12 +23,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void addNew() {
         System.out.println("Nhap id: ");
-        int id =scanner.nextInt();
+        int id = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Nhap ten: ");
-        String name =scanner.nextLine();
+        String name = scanner.nextLine();
         System.out.println("Nhap ngay sinh: ");
-        String dateOfBirth =scanner.nextLine();
+        String dateOfBirth = scanner.nextLine();
         System.out.println("Nhap gioi tinh: ");
         System.out.println("1. Nam.");
         System.out.println("2. Nữ");
@@ -45,13 +48,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         System.out.println("Nhap chung minh: ");
-        int idCard =scanner.nextInt();
+        int idCard = scanner.nextInt();
         System.out.println("Nhap sdt: ");
-        int numberPhone =scanner.nextInt();
+        int numberPhone = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Nhap Email: ");
-        String email =scanner.nextLine();
-
+        String email = scanner.nextLine();
         System.out.println("Nhap trinh do: ");
         System.out.println("1. Trung Cấp.");
         System.out.println("2. Cao Đẳng");
@@ -73,7 +75,6 @@ public class EmployeeServiceImpl implements EmployeeService {
                 level = "Sau đại Học";
                 break;
         }
-
         System.out.println("Nhap vi tri: ");
         System.out.println("1. Lễ tân.");
         System.out.println("2. Phục vụ");
@@ -105,36 +106,93 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         System.out.println("Nhap luong: ");
-        int salary =scanner.nextInt();
-        Employee employee = new Employee( id,  name, dateOfBirth,  sex,  idCard,  numberPhone, email,  level,  position,  salary);
+        int salary = scanner.nextInt();
+        Employee employee = new Employee(id, name, dateOfBirth, sex, idCard, numberPhone, email, level, position, salary);
         employeeList.add(employee);
 
     }
 
     @Override
     public void edit() {
-        System.out.println("nhap vao id muon sua");
-        int idedit = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (employeeList.get(i).getId() == idedit) {
-                System.out.println("nhap ten muon sua");
-                String editNameProduct = scanner.nextLine();
-                employeeList.get(i).setName(editNameProduct);
-                System.out.println("nhap gia muon sua");
-                double editPriceProduct = Double.parseDouble(scanner.nextLine());
-                employeeList.get(i).setPrice(editPriceProduct);
-            } else {
-                System.out.println("khong co san pham nay");
+        System.out.println("Input your id");
+        int fixid = scanner.nextInt();
+        boolean check = false;
+        for (Person employee : employeeList) {
+            System.out.println(employee.getId());
+            if (employee.getId() == fixid) {
+                check = true;
+                System.out.println("Ban muon sua cai gi");
+                System.out.println("2. name");
+                System.out.println("3. dateOfBirth");
+                System.out.println("4. sex");
+                System.out.println("5. idCard");
+                System.out.println("6. numberPhone");
+                System.out.println("7. email");
+                System.out.println("8. trinh do");
+                System.out.println("9. vi tri");
+                System.out.println("10. luong");
+                int choice = scanner.nextInt();
+                scanner.skip("\\R");
+                switch (choice) {
+                    case 2: {
+                        System.out.println("sua ten");
+                        String fixName = scanner.nextLine();
+                        employee.setName(fixName);
+                        break;
+                    }
+                    case 3: {
+                        System.out.println("sua ngay sinh");
+                        String fixDateOfBirth = scanner.nextLine();
+                        employee.setDateOfBirth(fixDateOfBirth);
+                        break;
+                    }
+                    case 4: {
+                        System.out.println("sua gioi tinh");
+                        String fixSex = scanner.nextLine();
+                        employee.setSex(fixSex);
+                        break;
+                    }
+                    case 5: {
+                        System.out.println("sua cmnd");
+                        int fixIdcard = scanner.nextInt();
+                        employee.setIdCard(fixIdcard);
+                        break;
+                    }
+                    case 6: {
+                        System.out.println("sua sdt");
+                        int fixNumberPhone = scanner.nextInt();
+                        employee.setNumberPhone(fixNumberPhone);
+                        break;
+                    }
+                    case 7: {
+                        System.out.println("sua email");
+                        String fixMail = scanner.nextLine();
+                        employee.setEmail(fixMail);
+                        break;
+                    }
+                    case 8: {
+                        System.out.println("sua trinh do");
+                        String fixLevel = scanner.nextLine();
+                        ((Employee) employee).setLevel(fixLevel);
+                        break;
+                    }
+                    case 9: {
+                        System.out.println("sua vi tri");
+                        String fixPosition = scanner.nextLine();
+                        ((Employee) employee).setPosition(fixPosition);
+                        break;
+                    }
+                    case 10: {
+                        System.out.println("sua luong");
+                        int fixSalary = scanner.nextInt();
+                        ((Employee) employee).setSalary(fixSalary);
+                        break;
+                    }
+
+                }
+            } else if (!check) {
+                System.out.println("ID not found!");
             }
         }
-        for (Product product : employeeList) {
-            System.out.println(product);
-        }
-
-    }
-
-    @Override
-    public void delete() {
-
     }
 }
