@@ -1,6 +1,5 @@
 package case_study.service.Impl;
 
-import case_study.models.Customer;
 import case_study.models.Employee;
 import case_study.models.Person;
 import case_study.service.EmployeeService;

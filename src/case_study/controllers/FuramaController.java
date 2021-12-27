@@ -1,12 +1,17 @@
 package case_study.controllers;
 
-import case_study.service.EmployeeService;
-import case_study.service.Impl.CustomerServiceImpl;
-import case_study.service.Impl.EmployeeServiceImpl;
+import case_study.service.Impl.*;
+import case_study.service.Impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
 public class FuramaController {
+
+
+    static VillaServiceImpl villaService = new VillaServiceImpl();
+    static RoomServiceImpl roomService = new RoomServiceImpl();
+    static HouseServiceImpl houseService = new HouseServiceImpl();
+
     public static void main(String[] args) {
         displayMainMenu();
     }
@@ -63,7 +68,7 @@ public class FuramaController {
     public static void displayEmployeeManagement() {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         boolean check = true;
-        int choice=0;
+        int choice = 0;
         while (check) {
             System.out.println("1. Display list employees");
             System.out.println("2. Add new employee");
@@ -97,7 +102,7 @@ public class FuramaController {
     public static void displayCustomerManagement() {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         boolean check = true;
-        int choice=0;
+        int choice = 0;
         while (check) {
             System.out.println("1. Display list customers");
             System.out.println("2. Add new customers");
@@ -129,8 +134,10 @@ public class FuramaController {
     }
 
     public static void displayFacilityManagement() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+
         boolean check = true;
-        int choice=0;
+        int choice = 0;
         while (check) {
             System.out.println("1. Display list facility");
             System.out.println("2. Add new facility");
@@ -144,16 +151,27 @@ public class FuramaController {
             } catch (NumberFormatException exception) {
                 System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
             }
-            switch (scanner.nextInt()) {
-                case 1: {
-                }
+            switch (choice) {
+                case 1:{
+                    facilityService.display();
+                    break;}
+                case 2:{
+                    facilityService.addNew();
+                    break;}
+                case 3:
+                    facilityService.edit();
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
+
             }
         }
     }
 
     public static void displayBookingManagement() {
         boolean check = true;
-        int choice=0;
+        int choice = 0;
         while (check) {
             System.out.println("1. Add new booking");
             System.out.println("2. Display list booking");
@@ -178,7 +196,7 @@ public class FuramaController {
 
     public static void displayPromotionManagement() {
         boolean check = true;
-        int choice =0;
+        int choice = 0;
         while (check) {
             System.out.println("1. Display list customers use service");
             System.out.println("2. Display list customers get voucher");
