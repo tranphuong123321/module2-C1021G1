@@ -8,9 +8,7 @@ import java.util.Scanner;
 public class FuramaController {
 
 
-    static VillaServiceImpl villaService = new VillaServiceImpl();
-    static RoomServiceImpl roomService = new RoomServiceImpl();
-    static HouseServiceImpl houseService = new HouseServiceImpl();
+
 
     public static void main(String[] args) {
         displayMainMenu();
@@ -58,8 +56,6 @@ public class FuramaController {
                 case 6:
                     System.exit(0);
                     break;
-
-
             }
 
         }
@@ -143,8 +139,6 @@ public class FuramaController {
             System.out.println("2. Add new facility");
             System.out.println("3. Display list facility maintenance");
             System.out.println("4. Return main menu");
-
-
             Scanner scanner = new Scanner(System.in);
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -152,19 +146,56 @@ public class FuramaController {
                 System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
             }
             switch (choice) {
-                case 1:{
+                case 1: {
                     facilityService.display();
-                    break;}
-                case 2:{
-                    facilityService.addNew();
-                    break;}
-                case 3:
-                    facilityService.edit();
                     break;
-                case 4:
+                }
+                case 2: {
+                    addNewFacilityManagement();
+                    break;
+                }
+
+
+            }
+        }
+    }
+
+    public static void addNewFacilityManagement() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+
+        boolean check = true;
+        int choice = 0;
+        while (check) {
+            System.out.println("1. Add new villa");
+            System.out.println("2. Add new house");
+            System.out.println("3. Add new room");
+            System.out.println("4. Return main menu");
+            Scanner scanner = new Scanner(System.in);
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException exception) {
+                System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
+            }
+            switch (choice) {
+                case 1: {
+                    facilityService.addNewVilla();
+                    displayFacilityManagement();
+                    break;
+                }
+                case 2: {
+                    facilityService.addNewHouse();
+                    displayFacilityManagement();
+                    break;
+                }
+                case 3: {
+                    facilityService.addNewRoom();
+                    displayFacilityManagement();
+                    break;
+                }
+                case 4: {
                     displayMainMenu();
                     break;
-
+                }
             }
         }
     }
