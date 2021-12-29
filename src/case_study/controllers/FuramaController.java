@@ -112,7 +112,7 @@ public class FuramaController {
             } catch (NumberFormatException exception) {
                 System.out.println("Bạn đã nhập sai, vui lòng nhập lại");
             }
-            switch (scanner.nextInt()) {
+            switch (choice) {
                 case 1:
                     customerService.display();
                     break;
