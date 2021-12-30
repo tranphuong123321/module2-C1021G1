@@ -17,7 +17,7 @@ public class FuramaController {
     public static void displayMainMenu() {
 
         boolean check = true;
-        int choice = 0;
+        int choice =0;
         while (check) {
             System.out.println("1. Employee Management");
             System.out.println("2. Customer Management");

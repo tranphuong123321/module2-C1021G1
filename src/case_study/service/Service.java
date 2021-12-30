@@ -1,11 +1,11 @@
 package case_study.service;
 
 public interface Service {
-    public void display();
+     void display();
 
-    public void addNew();
+     void addNew();
 
-    public void edit();
+     void edit();
 
 
 
