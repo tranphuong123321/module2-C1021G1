@@ -57,7 +57,6 @@ public class FuramaController {
                     System.exit(0);
                     break;
             }
-
         }
     }
 
@@ -154,8 +153,6 @@ public class FuramaController {
                     addNewFacilityManagement();
                     break;
                 }
-
-
             }
         }
     }
